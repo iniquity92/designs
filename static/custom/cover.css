@@ -1,0 +1,66 @@
+.navigation{
+    width: 100%;
+    top: 690px;
+    left: 0px;
+    border-width: 0px;
+    background: darkcyan;
+    color: #fff;
+    border-radius: 0px;
+    position: absolute;
+   
+}
+
+.affix {
+      top: 0;
+      position: fixed;
+      z-index: 10;
+}
+
+.affix + .container-fluid {
+      padding-top: 70px;
+}
+.icon-bar{
+    background: #fff;
+}
+
+.main-photo{
+    background-image: url('/designs/img/5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+}
+
+.mover{
+    position: relative;
+    top: 39px;
+    width: 100%;
+}
+#features{
+    background: url('/designs/img/7.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+   
+}
+
+.text {
+    color:#008b8b;
+    text-shadow: none;
+}
+.text-justify{
+    margin: 35px 320px;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.text-header{
+    margin-top:50px;
+    margin-bottom: 40px;
+    font-family: 'Pacifico',cursive;
+}
+.about{
+   background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f3f3f3));
+   background-image: -webkit-linear-gradient(top, #ffffff, #f3f3f3);
+   background-image: -moz-linear-gradient(top, #ffffff, #f3f3f3);
+   background-image: linear-gradient(to bottom, #ffffff, #f3f3f3);
+}
