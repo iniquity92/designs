@@ -1,3 +1,10 @@
+.body{
+    scroll-behavior: smooth;
+}
+.row-padding{
+    padding-bottom:15px;
+    padding-top: 5px;
+}
 .navigation{
     width: 100%;
     top: 691px;
@@ -7,8 +14,10 @@
     color: #fff;
     border-radius: 0px;
     position: absolute;
+    z-index: 10;
    
 }
+
 
 .affix {
       top: 0;
@@ -16,6 +25,9 @@
       z-index: 10;
 }
 
+/*.affix + .container-fluid {
+      padding-top: 70px;
+}*/
 .icon-bar{
     background: #fff;
 }
@@ -25,26 +37,41 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
-    
 }
-
+.btn-main-photo,.btn-main-photo:focus{
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+.btn-main-photo:hover{
+    background-color: transparent;
+    border: 2px solid sandybrown;
+    color: sandybrown;
+}
+.btn-main-photo{
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
 .mover{
     position: relative;
-    top: 39px;
+    top: 0px;
     width: 100%;
 }
-
 .navigation + .mover{
-    padding-top:40px;
+    padding-top: 40px;
+
 }
+
 #features{
     background: url('/designs/img/7.png');
     background-attachment: fixed;
     background-size: cover;
    
 }
-
+.feature{
+    padding-bottom: 50px;
+}
 .text {
     color:#008b8b;
     text-shadow: none;
@@ -64,4 +91,156 @@
    background-image: -webkit-linear-gradient(top, #ffffff, #f3f3f3);
    background-image: -moz-linear-gradient(top, #ffffff, #f3f3f3);
    background-image: linear-gradient(to bottom, #ffffff, #f3f3f3);
+   padding-bottom: 50px;
 }
+
+/* image overlays */
+.image{
+    height: 200px;
+    width: 300px;
+    transition: width 1.5s, height 1.5s;
+    position: relative;
+    
+    
+}
+.overlay{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width:100%;
+    height:100%;
+    background-color: #000;
+    opacity: 0.4;
+    display: none;
+}
+.overlay-text{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 14px;
+    z-index:10;
+    line-height: 100px;
+    display: none;
+    
+}
+.image:hover{
+    width: 320px;
+    height: 210px;
+}
+.image:hover > .overlay{
+    display: inline-block;
+}
+.image:hover > .overlay-text{
+    display: inline-block;
+}
+#adventure{
+    background-image: url('/designs/img/Bungy-5X1NZ.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#beaches{
+    background-image: url('/designs/img/cathedral-cove-coromandel.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#wildlife{
+    background-image: url('/designs/img/northern-royal-albatross.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#richliving{
+    background-image: url('/designs/img/split-apple-retreat-nelson.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#fitness{
+    background-image: url('/designs/img/aro-ha-wellness-retreat-yoga.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#hobbiton{
+    background-image: url('/designs/img/hobbiton-movie-set-1-(c).jpg');
+    background-size: cover;
+    background-position: center;
+}
+#maori{
+    background-image: url('/designs/img/te-matatini3.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#trails{
+    background-image: url('/designs/img/snowfall-2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.btn-features:enabled{
+    background-color: transparent;
+    border: 1px solid white;
+    color:#fff;
+}
+.btn-features:active{
+    border: 1px solid orangered;
+    color:orangered;
+}
+#contact{
+    background-image: url("/designs/img/New-Zealand-Aurora-Borellis.jpg");
+    background-position:center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 50px;
+   
+}
+.comm{
+    position: relative;
+    left: 136px;
+    top: 20px;
+    width: 500px;
+}
+.phone{
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+.email{
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+.social{
+    position: relative;
+    left: 210px;
+    top: 40px;
+    width: 500px;
+}
+.social-logo{
+    float: left;
+    margin: 5px;
+    padding: 5px;
+} 
+.fields{
+    width: 500px;
+}
+.fields-left{
+    position: relative;
+    left: 120px; 
+}
+.fields-right{
+    position: relative;
+    left: 20px;
+}
+.submit{
+    position: relative;
+    left: 138px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+#footer{
+    background-color: #000;
+    padding: 50px;
+    color: #fff;
+}
+
