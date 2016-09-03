@@ -10,7 +10,7 @@
     top: 691px;
     left: 0px;
     border-width: 0px;
-    background: darkcyan;
+    background: black;
     color: #fff;
     border-radius: 0px;
     position: absolute;
@@ -33,7 +33,7 @@
 }
 
 .main-photo{
-    background-image: url('/designs/img/5.jpg');
+    background-image: url('/designs/img/holding-hands.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -64,7 +64,7 @@
 }
 
 #features{
-    background: url('/designs/img/7.png');
+    background: url('/designs/img/ohau-snowboarder.jpg');
     background-attachment: fixed;
     background-size: cover;
    
@@ -73,7 +73,7 @@
     padding-bottom: 50px;
 }
 .text {
-    color:#008b8b;
+    color:#000;
     text-shadow: none;
 }
 .text-justify{
@@ -176,12 +176,12 @@
     background-size: cover;
     background-position: center;
 }
-.btn-features:enabled{
+.btn-features,.btn-features:focus{
     background-color: transparent;
     border: 1px solid white;
     color:#fff;
 }
-.btn-features:active{
+.btn-features:hover{
     border: 1px solid orangered;
     color:orangered;
 }
@@ -231,12 +231,17 @@
     position: relative;
     left: 20px;
 }
-.submit{
+.submit, .submit:focus{
     position: relative;
     left: 138px;
     background-color: transparent;
     border: 2px solid white;
     color: white;
+}
+.submit:hover{
+    background-color: transparent;
+    border: 2px solid sandybrown;
+    color:sandybrown;
 }
 #footer{
     background-color: #000;
