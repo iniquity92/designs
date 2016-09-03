@@ -12,14 +12,14 @@
     <title>Cover Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!--link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="static/cover.css" rel="stylesheet">
-    <link href="static/custom/cover.css" rel="stylesheet">
+    <link href="static/css/cover.css" rel="stylesheet">
+    <link href="static/css/custom/cover.css" rel="stylesheet">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Pacifico" rel="stylesheet">
 
@@ -37,9 +37,9 @@
 
   <body>
 
-    <div class="site-wrapper">
+    <div class="site-wrapper home">
 
-      <div class="site-wrapper-inner main-photo">
+      <div id="#home" class="site-wrapper-inner main-photo">
 
         <div class="cover-container">
 
@@ -60,7 +60,7 @@
             <h1 class="cover-heading">Cover your page.</h1>
             <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
             <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
+              <a href="#" class="btn btn-lg btn-main-photo">Learn more</a>
             </p>
           </div>
 
@@ -84,12 +84,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#home">Project name</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav masthead-nav">
-            <li class="active"><a href="#">Home</a></li>
+          <ul id="menu" class="nav masthead-nav">
+            <li class="active"><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!-- /.nav-collapse -->
@@ -108,22 +109,207 @@
         <div id="features" class="row feature"> 
           <div class="col-sm-12">
             <h2 class="text text-header">At a glance</h2>
-            <p class="text text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            <p class="text text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>                  <p class="text text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <div class="row row-padding">
+                <div class="col-sm-3">
+                  <div id="adventure" class="image"><!-- image 1 -->
+                      <div class="overlay"></div>
+                      <div class="overlay-text">
+                        <h3>Adventure Sports</h3>
+                        <button class="btn btn-features">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </div>
+                  </div><!-- end image 1-->
+                </div><!-- end col -->
+                <div class="col-md-3">
+                   <div id="beaches" class="image"><!-- image 2 -->
+                      <div class="overlay"></div>
+                      <div class="overlay-text">
+                        <h3>Beautiful Beaches</h3>
+                        <button class="btn btn-features">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </div>
+                  </div><!-- end image 2-->
+                </div>
+                <div class="col-md-3">
+                   <div id="wildlife" class="image"><!-- image 3 -->
+                      <div class="overlay"></div>
+                      <div class="overlay-text">
+                        <h3>Amazing Wildlife</h3>
+                        <button class="btn btn-features">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </div>
+                  </div><!-- end image 3-->
+                </div>
+                <div class="col-md-3">
+                   <div id="richliving" class="image"><!-- image 4 -->
+                      <div class="overlay"></div>
+                      <div class="overlay-text">
+                        <h3>Fine Living</h3>
+                        <button class="btn btn-features">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </div>
+                  </div><!-- end image 4-->
+                </div>
+            </div>
+            <div class="row row-padding">
+                <div class="col-md-3">
+                   <div id="fitness" class="image"><!-- image 5 -->
+                      <div class="overlay"></div>
+                      <div class="overlay-text">
+                        <h3>Health and Fitness</h3>
+                        <button class="btn btn-features">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </div>
+                  </div><!-- end image 5-->
+                </div>
+                <div class="col-md-3">
+                   <div id="hobbiton" class="image"><!-- image 6 -->
+                      <div class="overlay"></div>
+                      <div class="overlay-text">
+                        <h3>Middle Earth</h3>
+                        <button class="btn btn-features">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </div>
+                  </div><!-- end image 6-->
+                </div>
+                <div class="col-md-3">
+                   <div id="maori" class="image"><!-- image 7 -->
+                      <div class="overlay"></div>
+                      <div class="overlay-text">
+                        <h3>Native Culture</h3>
+                        <button class="btn btn-features">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </div>
+                  </div><!-- end image 7-->
+                </div>
+                <div class="col-md-3">
+                   <div id="trails" class="image"><!-- image 1 -->
+                      <div class="overlay"></div>
+                      <div class="overlay-text">
+                        <h3>Trekking Trails</h3>
+                        <button class="btn btn-features">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </div>
+                  </div><!-- end image 8-->
+                </div>
+
+            </div>
           </div><!-- end feature's column-->
         </div> <!-- end features -->
+
+        <div id="contact" class="row contact"><!--contact us section begins -->
+          <h2>Contact Us</h2>
+          <div class="col-md-12">
+            <h3>Write to Us</h3>
+            <form id ="writeus" action="sendmail.php" method="POST" enctype="multipart/form-data">
+            <div class="row"><!--begin Write to us -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input class="form-control fields fields-left" type="text" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                  <input class="form-control fields fields-left" type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                  <input class="form-control fields fields-left" type="tel" id="phone" name="phone" placeholder="Contact" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <textarea class="form-control fields fields-right" name="message" id="message" placeholder="Message" rows="5" required>
+                  </textarea>
+                </div>
+              </div>
+                <input class="btn btn-default submit" type="submit" name="submit" id="submit" value="Send Message">
+            </div><!--end Write to us  -->
+            </form>
+            <div class="row">
+              <div class="col-md-6 comm">
+                <div class="phone"><!--begin phone -->
+                  <a href="tel:+919033104947">
+                    <h3><span class="glyphicon glyphicon-earphone"></span></h3>
+                    <p>+91-9033104947</p>
+                  </a>
+                </div><!--end phone -->
+                <div class="email"><!--begin email -->
+                  <a href="mailto:abc@def.com">
+                    <h3><span class="glyphicon glyphicon-envelope"></span></h3>
+                    <p>abc@def.com</p>
+                  </a>
+                </div><!-- end email -->
+                
+                 
+              </div>
+              <div class="col-md-6 social"><!-- begin social -->
+                <div>
+                  <span class="social-logo">
+                    <a href=""><img src="img/logo/FB-f-Logo__blue_50.png" height="50" width="50"></a>
+                  </span>
+                </div>
+                <div>
+                  <span class="social-logo">
+                    <a href=""><img src="img/logo/Twitter_Social_Icon_Rounded_Square_Color.png" height="50" width="50"></a>
+                  </span>
+                </div>
+                <div>
+                  <span class="social-logo">
+                    <a href=""><img src="img/logo/Instagram-v051916.png" height="50" width="50"></a>
+                  </span>
+                </div>
+                <div>
+                  <span class="social-logo">
+                    <a href=""><img src="img/logo/stumbleupon.png" height="50" width="50"></a>
+                  </span>
+                </div>
+                <div>
+                  <span class="social-logo">
+                    <a href=""><img src="img/logo/Pinterest-badge-144px.png" height="50" width="50"></a>
+                    </span>
+                </div>
+                <div>
+                  <span class="social-logo">
+                    <a href=""><img src="img/logo/YouTube-icon-full_color.png" height="50" width="71"></a>
+                  </span>
+                </div>
+              </div><!--end social -->
+          </div>
+            
+          </div><!--end comm -->
+        </div><!--end contact -->
         
+        <div id="footer" class="row"><!--begin footer -->
+          <div class="col-md-12">
+            <small>
+              <span class="glyphicon glyphicon-copyright-mark"></span>2015. Contact <a href="xyz">John Doe</a>
+            </small>
+          </div>
+        </div><!-- end footer -->
+    
     </div>
+        
+
+       
+    
     
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="static/js/jquery.js"></script>
     <!--script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- smoothscroll.js -->
+    <script src="static/js/custom/smoothscroll.js"></script>
   </body>
 </html>
