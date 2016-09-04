@@ -35,7 +35,7 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#navigation" style="position:relative;">
 
     <div class="site-wrapper home">
 
@@ -60,7 +60,7 @@
             <h1 class="cover-heading">Cover your page.</h1>
             <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
             <p class="lead">
-              <a href="#" class="btn btn-lg btn-main-photo">Learn more</a>
+              <a href="#about" class="btn btn-lg btn-main-photo">Learn more</a>
             </p>
           </div>
 
@@ -75,7 +75,7 @@
       </div>
     </div>
     
-    <nav class="navbar navigation" data-spy="affix" data-offset-top="690">
+    <nav id="navigation" class="navbar navigation" data-spy="affix" data-offset-top="690">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -115,7 +115,7 @@
                       <div class="overlay"></div>
                       <div class="overlay-text">
                         <h3>Adventure Sports</h3>
-                        <button class="btn btn-features">
+                        <button class="btn btn-features" data-toggle="modal" data-target="#modal" data-title="adventure">
                           <span class="glyphicon glyphicon-search"></span>
                         </button>
                       </div>
@@ -126,7 +126,7 @@
                       <div class="overlay"></div>
                       <div class="overlay-text">
                         <h3>Beautiful Beaches</h3>
-                        <button class="btn btn-features">
+                        <button class="btn btn-features" data-toggle="modal" data-target="#modal" data-title="beaches">
                           <span class="glyphicon glyphicon-search"></span>
                         </button>
                       </div>
@@ -137,7 +137,7 @@
                       <div class="overlay"></div>
                       <div class="overlay-text">
                         <h3>Amazing Wildlife</h3>
-                        <button class="btn btn-features">
+                        <button class="btn btn-features" data-toggle="modal" data-target="#modal" data-title="wildlife">
                           <span class="glyphicon glyphicon-search"></span>
                         </button>
                       </div>
@@ -148,7 +148,7 @@
                       <div class="overlay"></div>
                       <div class="overlay-text">
                         <h3>Fine Living</h3>
-                        <button class="btn btn-features">
+                        <button class="btn btn-features" data-toggle="modal" data-target="#modal" data-title="fine">
                           <span class="glyphicon glyphicon-search"></span>
                         </button>
                       </div>
@@ -161,7 +161,7 @@
                       <div class="overlay"></div>
                       <div class="overlay-text">
                         <h3>Health and Fitness</h3>
-                        <button class="btn btn-features">
+                        <button class="btn btn-features" data-toggle="modal" data-target="#modal" data-title="fitness">
                           <span class="glyphicon glyphicon-search"></span>
                         </button>
                       </div>
@@ -172,7 +172,7 @@
                       <div class="overlay"></div>
                       <div class="overlay-text">
                         <h3>Middle Earth</h3>
-                        <button class="btn btn-features">
+                        <button class="btn btn-features" data-toggle="modal" data-target="#modal" data-title="hobbits">
                           <span class="glyphicon glyphicon-search"></span>
                         </button>
                       </div>
@@ -183,7 +183,7 @@
                       <div class="overlay"></div>
                       <div class="overlay-text">
                         <h3>Native Culture</h3>
-                        <button class="btn btn-features">
+                        <button class="btn btn-features" data-toggle="modal" data-target="#modal" data-title="maori">
                           <span class="glyphicon glyphicon-search"></span>
                         </button>
                       </div>
@@ -194,7 +194,7 @@
                       <div class="overlay"></div>
                       <div class="overlay-text">
                         <h3>Trekking Trails</h3>
-                        <button class="btn btn-features">
+                        <button class="btn btn-features" data-toggle="modal" data-target="#modal" data-title="trails">
                           <span class="glyphicon glyphicon-search"></span>
                         </button>
                       </div>
@@ -294,6 +294,29 @@
         </div><!-- end footer -->
     
     </div>
+    <!-- modals -->
+
+    <!-- begin modal-->
+
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+                         ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end modal -->
+
         
 
        
@@ -311,5 +334,30 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     <!-- smoothscroll.js -->
     <script src="static/js/custom/smoothscroll.js"></script>
+    <script>
+      $(function(){
+        $('body').scrollspy({ target:'#navigation'});
+         $("#myModal").on('show.bs.modal',function(e){
+            var button = $(e.relatedTarget);
+            var caller = button.data('title');
+            var modal = $(this);
+            $.ajax({
+              url : "getdetails.php",
+              data : {feature : caller},
+              method : "GET".
+              success : function(data){
+                var arr = JSON.parse(data);
+                about = arr['about'];
+                images = arr['images'];
+                
+              }
+            });
+            modal.find('.modal-title').text('New caller'+caller);
+            modal.find('.modal-body').text(caller);
+        });
+        
+      });
+
+    </script>
   </body>
 </html>
