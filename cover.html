@@ -148,7 +148,7 @@
                       <div class="overlay"></div>
                       <div class="overlay-text">
                         <h3>Fine Living</h3>
-                        <button class="btn btn-features" data-toggle="modal" data-target="#modal" data-title="fine">
+                        <button class="btn btn-features" data-toggle="modal" data-target="#modal" data-title="fineliving">
                           <span class="glyphicon glyphicon-search"></span>
                         </button>
                       </div>
@@ -303,9 +303,9 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            <h4 class="modal-title modal-title-text" id="myModalLabel">Modal title</h4>
           </div>
-          <div class="modal-body">
+          <div class="modal-body modal-body-text">
                          ...
           </div>
           <div class="modal-footer">
@@ -337,23 +337,50 @@
     <script>
       $(function(){
         $('body').scrollspy({ target:'#navigation'});
-         $("#myModal").on('show.bs.modal',function(e){
+         $("#modal").on('show.bs.modal',function(e){
             var button = $(e.relatedTarget);
             var caller = button.data('title');
             var modal = $(this);
+            //var about;
             $.ajax({
               url : "getdetails.php",
               data : {feature : caller},
-              method : "GET".
-              success : function(data){
-                var arr = JSON.parse(data);
-                about = arr['about'];
-                images = arr['images'];
-                
+              dataType : "json",
+              method : "GET",
+              success : function(result){
+                //var arr = JSON.parse(data);
+                var about = result['about'];
+                var images = result['images'];
+                var out = "<div class='container-fluid'><div class='row'>";
+                for(i=0;i<images.length;i++){
+                  out += "<div class='col-md-4' style='padding:5px;'>"+
+                  "<div class='modal-image-box'>"+
+                  "<div class='modal-image'>"+ 
+                  "<img src='" + images[i]['uri'] + "' class='img-thumbnail' alt='"+ images[i]['name']+"' height='60' width='100'> "+
+                  "<div class='modal-image-overlay'>"+
+                  "</div>"+ //closed .modal-image-overlay
+                  "<div class='modal-image-overlay-text'>"+
+                  "<a href='" + images[i]['uri'] + "'>"+
+                  "<button class='btn btn-modal-image'>"+
+                  "<span class='glyphicon glyphicon-search'></span>"+
+                  "</button>"+
+                  "</a>"+
+                  "</div>"+ // closed .modal-image-overlay-text
+                  "</div>"+ //closed .modal-image
+                  "<div class='modal-image-box-text'>"+
+                  "<h4>"+ images[i]['name']+"</h4>"+
+                  "<p>"+ images[i]['about']+"</p>"+
+                  "</div>"+ //closed .modal-image-box-text
+                  "</div>"+ //close .modal-image-box
+                  "</div>"; //close .col-md-4 
+                }
+                out += "</div></div>"; //close .row and .container-fluid
+                about += out;
+                modal.find('.modal-title').text(caller.toUpperCase());
+                modal.find('.modal-body').html(about);
               }
             });
-            modal.find('.modal-title').text('New caller'+caller);
-            modal.find('.modal-body').text(caller);
+            
         });
         
       });
