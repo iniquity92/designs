@@ -333,34 +333,37 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     <!-- smoothscroll.js -->
-    <script src="static/js/custom/smoothscroll.js"></script>
-    <script>
+    <script src="static/js/custom/cover.js"></script>
+    <!--script>
       $(function(){
+        var data;
         $('body').scrollspy({ target:'#navigation'});
+        $(window).on("load",function(){
+                $.ajax({
+                    url:"json_data.txt",
+                    dataType:"json",
+                    method:"GET",
+                    success:function(arg){
+                        data = arg;
+                    }
+                });
+          });
          $("#modal").on('show.bs.modal',function(e){
             var button = $(e.relatedTarget);
             var caller = button.data('title');
             var modal = $(this);
-            //var about;
-            $.ajax({
-              url : "getdetails.php",
-              data : {feature : caller},
-              dataType : "json",
-              method : "GET",
-              success : function(result){
-                //var arr = JSON.parse(data);
-                var about = result['about'];
-                var images = result['images'];
-                var out = "<div class='container-fluid'><div class='row'>";
-                for(i=0;i<images.length;i++){
+            var about = data[caller]['about'];
+            var images = data[caller]['images'];
+            var out = "<div class='container-fluid'><div class='row'>";
+            for(i=0;i<images.length;i++){
                   out += "<div class='col-md-4' style='padding:5px;'>"+
                   "<div class='modal-image-box'>"+
                   "<div class='modal-image'>"+ 
-                  "<img src='" + images[i]['uri'] + "' class='img-thumbnail' alt='"+ images[i]['name']+"' height='60' width='100'> "+
+                  "<img src='" + images[i]['p_url'] + "' class='img-thumbnail' alt='"+ images[i]['p_name']+"' height='60' width='100'> "+
                   "<div class='modal-image-overlay'>"+
                   "</div>"+ //closed .modal-image-overlay
                   "<div class='modal-image-overlay-text'>"+
-                  "<a href='" + images[i]['uri'] + "'>"+
+                  "<a href='" + images[i]['p_url'] + "'>"+
                   "<button class='btn btn-modal-image'>"+
                   "<span class='glyphicon glyphicon-search'></span>"+
                   "</button>"+
@@ -368,23 +371,20 @@
                   "</div>"+ // closed .modal-image-overlay-text
                   "</div>"+ //closed .modal-image
                   "<div class='modal-image-box-text'>"+
-                  "<h4>"+ images[i]['name']+"</h4>"+
-                  "<p>"+ images[i]['about']+"</p>"+
+                  "<h4>"+ images[i]['p_name']+"</h4>"+
+                  "<p>"+ images[i]['p_about']+"</p>"+
                   "</div>"+ //closed .modal-image-box-text
                   "</div>"+ //close .modal-image-box
                   "</div>"; //close .col-md-4 
-                }
-                out += "</div></div>"; //close .row and .container-fluid
-                about += out;
-                modal.find('.modal-title').text(caller.toUpperCase());
-                modal.find('.modal-body').html(about);
-              }
-            });
-            
+            }
+            out += "</div></div>"; //close .row and .container-fluid
+            about += out;
+            modal.find('.modal-title').text(caller.toUpperCase());
+            modal.find('.modal-body').html(about);
         });
         
       });
 
-    </script>
+    </script-->
   </body>
 </html>
