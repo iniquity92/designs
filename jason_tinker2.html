@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="static/js/jquery.js"></script>
+    </head>
+    <body>
+        <button id="b1" data-title="wildlife">wildlife</button>
+        <button id="b2" data-title="beaches">Beaches</button>
+        <div id="result"></div>
+    </body>
+    <script>
+        var data;
+        $(function(){
+            $(window).on("load",function(){
+                $.ajax({
+                    url:"json_data.txt",
+                    dataType:"json",
+                    method:"GET",
+                    success:function(arg){
+                        data = arg;
+                    }
+                });
+            });
+
+            $("#b1,#b2").on("click",function(){
+                var source = this.dataset.title;
+                var out ="";
+                out += "<b>"+source+"</b>";
+                out += "<br />";
+                out += "--><b>about:</b>";
+                out += data[source]['about'];
+                out += "<br />";
+                out += "--><b>images:</b>";
+                out += "<br />";
+                small= data[source]['images'];
+                for(x in small){
+                    out += "-->--><b>"+x+"</b>";
+                    out += "<br />";
+                    out += "-->-->--><b>name:</b>";
+                    out += small[x]['p_name'];
+                    out += "<br />";
+                    out += "-->-->--><b>url:</b>";
+                    out += small[x]['p_url'];
+                    out += "<br />";
+                    out += "-->-->--><b>about:</b>";
+                    out += small[x]['p_about'];
+                    out += "<br />";
+
+                }
+                            
+                out += "<br />";
+                $("#result").html(out);
+            });
+        });
+    </script>
+
+</html>

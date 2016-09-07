@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>Modals</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <!--link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="static/css/cover.css" rel="stylesheet">
+        <link href="static/css/custom/cover.css" rel="stylesheet">
+        <style>
+            .some-fucked-shit{
+                position:relative;
+                border:1px solid black; 
+                height:100px; 
+                width:100px;
+            }
+            .element-padding{
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <button type="button" class="btn btn-primary btn-lg" 
+            data-toggle="modal" data-target="#myModal" data-title="adventures">
+            button1 
+        </button>
+        <button type="button" class="btn btn-primary btn-lg"
+             data-toggle="modal" data-target="#myModal" data-title="beachess">
+            button2
+        </button>
+        <button type="button" class="btn btn-primary btn-lg"
+             data-toggle="modal" data-target="#myModal" data-title="finelivings">
+            button3
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                         <h4 class="modal-title" id="myModalLabel" style="text-shadow:none;color:black;">Modal title</h4>
+                    </div>
+                    <div class="modal-body" style="text-shadow:none;color:black;">
+                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum, sapien eleifend sodales porta, lorem augue fermentum est, ut pharetra sem sapien viverra nulla. Curabitur sagittis, ipsum eget rhoncus varius, ipsum tellus elementum mi, quis pharetra est est in ex. Maecenas quam libero, interdum sed convallis vel, finibus a sapien. Integer vulputate facilisis odio, ac venenatis odio. Suspendisse potenti. Curabitur iaculis mi ac aliquam porta. Integer sed nibh feugiat, porta massa quis, congue ex. Morbi ac mi in urna convallis tincidunt. Duis posuere suscipit neque et accumsan. Quisque vulputate elementum justo, ut bibendum risus imperdiet interdum. Nullam ultrices felis condimentum lacus sagittis, a efficitur enim tincidunt. Sed vel faucibus orci. In at eleifend justo. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+
+                        <p>In eleifend rhoncus ligula eu volutpat. Sed urna mi, mollis non porttitor ac, condimentum vel erat. Ut ullamcorper viverra ipsum vel venenatis. Nam hendrerit porta purus. Quisque placerat quis velit eget luctus. Nullam fringilla, justo vel suscipit porta, nunc nunc consectetur justo, eu dapibus mi justo nec massa. Nam vehicula, augue vel faucibus cursus, arcu risus suscipit sem, dignissim scelerisque tortor nibh vel dui. Ut elit felis, sollicitudin vel aliquam eu, fermentum eu odio. Proin sit amet massa eu turpis sodales rutrum sed ac massa. Aenean augue enim, rutrum non ligula id, lacinia interdum lorem. Vivamus congue quis risus eget varius. Pellentesque sit amet metus urna. Duis sodales quam elit, eget sodales est tincidunt eget. Morbi maximus nisl a vestibulum euismod. Maecenas nec placerat nunc. Praesent ullamcorper malesuada eleifend.</p>
+
+                        <p>Cras sollicitudin quam in sodales sagittis. Etiam malesuada velit in scelerisque elementum. Proin maximus pulvinar dui sed luctus. Nunc ipsum quam, euismod vel enim quis, facilisis rhoncus libero. Quisque tristique accumsan turpis sit amet feugiat. Morbi quis libero scelerisque dui tempus interdum sit amet ut nisi. Nam consequat sodales lorem, ultricies ultricies eros. Vivamus eget faucibus ligula, ut viverra nulla. Morbi id enim velit. Donec nec lacus ut libero pretium scelerisque. Quisque elementum, augue sed vehicula facilisis, lectus purus faucibus lectus, non rutrum felis dolor et tortor. Sed finibus justo quis pretium luctus. Cras a lectus condimentum, blandit nisi et, pulvinar magna. Nunc non leo eu orci eleifend tristique eu sit amet libero. Donec tortor nisl, mattis et laoreet ac, interdum sit amet arcu. Etiam vel lorem magna.</p>
+
+                        <p>Fusce faucibus sed lacus ut consequat. Vivamus consectetur lectus sit amet velit condimentum consectetur. Aliquam cursus vehicula ultricies. Fusce luctus urna sed accumsan molestie. In laoreet nisl ut iaculis consectetur. Etiam metus sapien, congue vitae faucibus sit amet, pharetra nec enim. Sed bibendum, elit nec mattis varius, orci massa efficitur metus, quis tincidunt tellus nisi quis tellus. Duis turpis mauris, tristique eget accumsan non, viverra eu urna. Praesent in metus eros.</p>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-3 element-padding">
+                                    <div class="some-fucked-shit"></div>
+                                </div>
+                                <div class="col-md-3 element-padding">
+                                    <div class="some-fucked-shit"></div>
+                                </div>
+                                <div class="col-md-3 element-padding">
+                                    <div class="some-fucked-shit"></div>
+                                </div>
+                                <div class="col-md-3 element-padding">
+                                    <div class="some-fucked-shit"></div>
+                                </div>
+                                <div class="col-md-3 element-padding">
+                                    <div class="some-fucked-shit"></div>
+                                </div>
+                                <div class="col-md-3 element-padding">
+                                    <div class="some-fucked-shit"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="static/js/jquery.js"></script>
+        <!--script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script-->
+        <script src="static/js/bootstrap.min.js"></script>
+        <script>
+            $("#myModal").on('show.bs.modal',function(e){
+            var button = $(e.relatedTarget);
+            var caller = button.data('title');
+            var modal = $(this);
+            //var about;
+            $.ajax({
+              url : "getdetails.php",
+              data : {feature : caller},
+              dataType : "json",
+              method : "GET",
+              success : function(result){
+                //var arr = JSON.parse(data);
+                var about = result['about'];
+                var images = result['images'];
+                var out;
+                for(i=0;i<images.length;i++){
+                  out += "<div class='modal-image-box'>"+
+                  "<div class='modal-image'>"+ 
+                  "<img src='" + images[i]['uri'] + "' class='img-thumbnail' alt='"+ images[i]['name']+"' height='60' width='100'> "+
+                  "<div class='modal-image-overlay'>"+
+                  "</div>"+ //closed .modal-image-overlay
+                  "<div class='modal-image-overlay-text'>"+
+                  "<button class='btn btn-modal-image'>"+
+                  "<span class='glyphicon glyphicon-search'></span>"+
+                  "</button>"+
+                  "</div>"+ // closed .modal-image-overlay-text
+                  "</div>"+ //closed .modal-image
+                  "<div class='modal-image-box-text'>"+
+                  "<h4>"+ images[i]['name']+"</h4>"+
+                  "<p>"+ images[i]['about']+"</p>"+
+                  "</div>"+ //closed .modal-image-box-text
+                  "</div>"; //close .modal-image-box
+                }
+                
+                about += out;
+                modal.find('.modal-title').text(caller);
+                modal.find('.modal-body').html(about);
+              }
+            });
+            
+        });
+        
+        </script>
+    </body>
+</html>
