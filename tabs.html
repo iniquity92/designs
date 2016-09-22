@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <style>
+            ul{
+                list-style:none;
+                }
+                li{
+                float:left;
+                border:1px solid black;
+                padding:15px;
+                background-color:crimson;
+                }
+                li:hover{
+                background-color:rgba(60,0,0,0.8);
+                cursor:pointer;
+                }
+                .active{
+                background-color: salmon;
+                }
+
+                #tab1,#tab2,#tab3{
+                width:63%;
+                border:1px solid black;
+                height: 140px;
+                position:absolute;
+                top:67px;
+                left:48px;
+                padding:5px;
+                }
+                .active-tab{
+                display:block;
+                }
+                .invisible{
+                display:none;
+                }
+
+        </style>
+    </head>
+    <body>
+        <div id="tabs">
+            <ul>
+                <li class="active" id="t1">tab1</li>
+                <li id="t2">tab2</li>
+                <li id="t3">tab3</li>
+            </ul>
+            <div id="tab1" class="active-tab">
+                <p>You can see the result in Figure 13-11. Both example elements are
+                    rotated around the y-axis so they are facing away from you. The example on
+                    the left shows the element with a value of visible on the backface-visibility
+                    property, so you can clearly see the back of the element. In the example on
+                    the right, you can see . . . well . . . nothing. The backface-visibility property
+                    has a value of hidden, so nothing is displayed—no border, no background-color,
+                    nothing. To confirm that the element is actually there, visit the website that
+                    accompanies this book and take a look at the animated code examples so
+                    you can better see how they work.
+                </p>
+            </div>
+            <div id="tab2" class="invisible">
+                <p>The state value is one of two keywords: hidden or visible. The default
+                    is visible, which behaves in the way I just described; the alternative, hidden,
+                    shows nothing. These work in the same way as the visibility property,
+                    which you should be familiar with from CSS2.
+                    The following is a quick example illustrating the difference between
+                    the two states by showing two elements that are identical except for their
+                    backface-visibility values. Here’s the code:
+                </p>
+            </div>
+            <div id="tab3" class="invisible">
+                <p>
+                    Sometimes you’ll encounter a situation where the element has been rotated
+                    to such a degree that it faces away from you and you are seeing the “back”
+                    of it (known as the backface). By default, the element behaves as if it were
+                    transparent, so you will see the reverse of what appears on the front. You can
+                    change this by using the backface-visibility property, which has this syntax:
+                </p>
+            </div>
+            
+        </div>
+        <script src="static/js/jquery.js"></script>
+        <script>
+            $(function(){
+                $("#t1,#t2,#t3").on("click",function(e){
+                var caller = e.target.id;
+                var to_show;
+                switch(caller){
+                    case "t1":
+                    to_show = "#tab1";
+                    break;
+                    case "t2":
+                    to_show = "#tab2";
+                    break;
+                    case "t3":
+                    to_show = "#tab3";
+                    break;
+                }
+                var hide_tab = $("div.active-tab")[0]['id'];
+                var hide_li = $("li.active")[0]['id'];
+                $("#"+hide_tab).removeClass("active-tab");
+                $("#"+hide_tab).addClass("invisible");
+                $(to_show).removeClass("invisible")
+                $(to_show).addClass("active-tab");
+                $("#"+hide_li).removeClass("active");
+                $("#"+caller).addClass("active");
+            });
+            });
+        </script>
+    </body>
+</html>
